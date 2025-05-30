@@ -1,21 +1,24 @@
 'use strict';
 
-// user name
-const userName = `Sergey`;
-// user age
-const age = 27;
-// is verified in a system?
-let isVerified = true;
-// date of registration
-const dateReg= `30.05.2025`;
-// number of user card
-const numOfUserCard = 10n;
-// has the user have promo code?
-let promoCode = `немає`;
-// user's reserve name
-let reserveName;
-// number of user's bonuses
-let numOfBonus = 0;
-console.log(`Користувач ${userName}, вік ${age}, має бонусів: ${numOfBonus}`);
-console.log(`Верифікація: ${isVerified}. Промокод: ${promoCode}`);
-console.log(`Зареєстрований ${dateReg} з номером картки: ${numOfUserCard}`);
+let userName = prompt(`What is your name?`);
+let userAge = Number(prompt(`How old are you?`));
+let userAgreement = confirm(`Do you agree to take part in?`);
+let userId = 12345678901234567890n;
+let bonusCode = null;
+let secondName;
+
+if (userAgreement === true) {
+    userAgreement = `Участь підтверджено`;
+}
+else {
+    userAgreement = `Відмовився`;
+}
+
+alert(`Привіт, ${userName}!\nТвій вік: ${userAge}\nТвій статус: ${userAgreement}`);
+
+console.log(`Ім'я:`, userName, typeof userName);
+console.log(`Вік:`, userAge, typeof userAge);
+console.log(`Статус:`, userAgreement, typeof userAgreement);
+console.log(`ID:`, userId, typeof userId);
+console.log(`Bonus code:`, bonusCode, typeof bonusCode);
+console.log(`Second name:`, secondName, typeof secondName);
