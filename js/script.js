@@ -1,9 +1,9 @@
 'use strict';
 
-let userName = prompt(`What is your name?`);
+const userName = prompt(`What is your name?`);
 let userAge = Number(prompt(`How old are you?`));
 let userAgreement = confirm(`Do you agree to take part in?`);
-let userId = 12345678901234567890n;
+const userId = 12345678901234567890n;
 let bonusCode = null;
 let secondName;
 
