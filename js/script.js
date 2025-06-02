@@ -1,24 +1,28 @@
 'use strict';
 
-const userName = prompt(`What is your name?`);
-let userAge = Number(prompt(`How old are you?`));
-let userAgreement = confirm(`Do you agree to take part in?`);
-const userId = 12345678901234567890n;
-let bonusCode = null;
-let secondName;
+const user = {
+    name: `Sergey`,
+    age: 27,
+    isOnline: true,
+    friends: [`Daniel`, `Timyr`, `Evgenyi`],
+    settings: {
+        theme: `light`,
+        notifications: true
+    }
+}
 
-if (userAgreement === true) {
-    userAgreement = `Участь підтверджено`;
+let firstFriendsName = user.friends[0];
+
+let notificationsEnabled = user.settings.notifications;
+if (notificationsEnabled === true) {
+    notificationsEnabled = `Cповіщення ввімкнені`;
 }
 else {
-    userAgreement = `Відмовився`;
+    notificationsEnabled = `Сповіщення вимкнені`;
 }
 
-alert(`Привіт, ${userName}!\nТвій вік: ${userAge}\nТвій статус: ${userAgreement}`);
-
-console.log(`Ім'я:`, userName, typeof userName);
-console.log(`Вік:`, userAge, typeof userAge);
-console.log(`Статус:`, userAgreement, typeof userAgreement);
-console.log(`ID:`, userId, typeof userId);
-console.log(`Bonus code:`, bonusCode, typeof bonusCode);
-console.log(`Second name:`, secondName, typeof secondName);
+console.log(`Ім’я користувача: ${user.name}`);
+console.log(`Кількість друзів: ${user.friends.length}`);
+console.log(`Ім’я першого друга: ${firstFriendsName}`);
+console.log(`Увімкнена тема: ${user.settings.theme}`);
+console.log(notificationsEnabled);
