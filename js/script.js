@@ -1,28 +1,34 @@
 'use strict';
 
-const user = {
-    name: `Sergey`,
-    age: 27,
-    isOnline: true,
-    friends: [`Daniel`, `Timyr`, `Evgenyi`],
-    settings: {
-        theme: `light`,
-        notifications: true
-    }
+const userName = prompt(`What is your name?`);
+const userAge = Number(prompt(`What is your age?`));
+
+let userNotificationsVerified = confirm(`Are you want ot get notifications?`);
+
+const userId = 1234567890123456789n;
+
+let lastLogin = null;
+
+let nickname;
+
+const favouriteTech = [`HTML`, `CSS`, `JavaScript`];
+
+const settings = {
+    theme: `light`,
+    autologin: false,
 }
 
-let firstFriendsName = user.friends[0];
+const sessions = {
+    name: userName,
+    age: userAge,
+    notifications: userNotificationsVerified,
+    id: userId,
+    lastLogin: lastLogin,
+    nickname: nickname,
+    favouriteTech: favouriteTech,
+    settings: settings,
+};
 
-let notificationsEnabled = user.settings.notifications;
-if (notificationsEnabled === true) {
-    notificationsEnabled = `Cповіщення ввімкнені`;
-}
-else {
-    notificationsEnabled = `Сповіщення вимкнені`;
-}
-
-console.log(`Ім’я користувача: ${user.name}`);
-console.log(`Кількість друзів: ${user.friends.length}`);
-console.log(`Ім’я першого друга: ${firstFriendsName}`);
-console.log(`Увімкнена тема: ${user.settings.theme}`);
-console.log(notificationsEnabled);
+alert(`Привіт, ${sessions.name}! Ваш ID: ${sessions.id}`);
+console.log(sessions);
+console.log(`name: ${typeof sessions.name}`, `age: ${typeof sessions.age}`, `notifications: ${typeof sessions.notifications}`, `id: ${typeof sessions.id}`, `lastLogin: ${typeof sessions.lastLogin}`, `nickname: ${typeof sessions.nickname}`, `favouriteTech: ${typeof sessions.favouriteTech}`, `settings: ${typeof sessions.settings}`);
