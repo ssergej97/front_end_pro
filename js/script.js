@@ -1,8 +1,10 @@
 'use strict';
 
-const numOfHours = +prompt(`Enter a number of hours you want`);
+let firstNumber = +prompt(`Enter first number`);
+let secondNumber = +prompt(`Enter second number`);
+let thirdNumber = +prompt(`Enter third number`);
 
-const numOfSecondsInHours = numOfHours * 3600;
 
-alert(`In your hours ${numOfSecondsInHours} seconds!`);
+let averageNumber = (firstNumber + secondNumber + thirdNumber) / 3;
 
+alert(`Average number is ${averageNumber}!`);
