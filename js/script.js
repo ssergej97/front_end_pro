@@ -1,159 +1,67 @@
 'use strict';
 
-//Output the numbers from 10 to 20 in one line separated by commas.
-
+// Output the numbers from 20 to 30, separated by a space, using a step of 0.5 (20 20.5 21 21.5....).
 const arrayOfNum = [];
 
-for (let i = 10; i <= 20; i++) {
-		arrayOfNum.push(i);
+for (let i = 20; i <= 30; i = i + 0.5) {
+	arrayOfNum.push(i);
 }
 
 const arrayToString = arrayOfNum.join(`, `);
 console.log(arrayToString);
 
 
-//Output the squares of numbers from 10 to 20.
+//Output the data with the cost of 10, 20, 30 ... 100 dollars, if one dollar is worth 27 hryvnias
 
+const oneDollar = 27;
 const arrayOfNumbers = [];
 
-for (let i = 10; i <= 20; i++) {
-	arrayOfNumbers.push(i ** 2);
+for (let i = 10; i <= 100; i = i + 10) {
+	arrayOfNumbers.push(i * oneDollar);
 }
 
-const arrayToStringNumbers = arrayOfNum.join(`, `);
-console.log(arrayToStringNumbers);
+const arrToString = arrayOfNumbers.join(`, `);
+console.log(arrToString);
 
 
-//Output the table of multiplication by 7
+//Output all integers from 1 to 100, whose square does not exceed N
 
-const arrOfNumMultiBySeven = [];
+const arrayOfNumbersInt = [];
+const intNum = +prompt('Enter a whole number');
 
-for (let i = 2; i <= 9; i++) {
-	arrOfNumMultiBySeven.push(7 * i);
+for (let i = 1; i <= 100; i++) {
+	const squareOfNum = i ** 2;
+
+	if (squareOfNum < intNum) arrayOfNumbersInt.push(i);
 }
 
-const arrToStrMultiBySeven = arrayOfNum.join(`, `);
-console.log(arrToStrMultiBySeven);
+const arrToStrNumbersInt = arrayOfNumbersInt.join(`, `);
+console.log(arrToStrNumbersInt);
 
 
-//Output the sum of all integers from 1 to 15.
+//Calculate if the integer is prime
 
-let sumOfNum = 0;
+const arrayOfNumPrime = [];
+const userNum = +prompt(`Enter a number:`);
 
-for (let i = 1; i <= 15; i++) {
-	sumOfNum += i;
+for (let i = 1; i <= userNum; i++) {
+	if (userNum % i === 0) arrayOfNumPrime.push(i);
 }
 
-console.log(sumOfNum);
+const isWholeNum = arrayOfNum.length === 2 ? `Your number is a whole number` : `Your number is not a whole number`;
+
+alert(isWholeNum);
 
 
-//Output the multiple of all integers from 15 to 35.
+//Calculate whether it is possible to get a number by raising the number 3 to a certain degree
 
-let multiOfNum = 1n;
+const userNumber = +prompt(`Enter a number:`);
 
-for (let i = 15n; i <= 35n; i++) {
-	multiOfNum *= i;
-}
-
-console.log(multiOfNum);
-
-
-//Output the arithmetic average of all integers from 1 to 500
-
-let averageOfNum = 0;
-
-for (let i = 1; i <= 500; i++) {
-	averageOfNum += i;
-}
-
-averageOfNum = averageOfNum / 500;
-
-console.log(averageOfNum);
-
-
-//Output the sum of only even numbers in the range from 30 to 80
-
-let sumOfEvenNum = 0;
-
-for (let i = 30; i <= 80; i++) {
-	if(i % 2 === 0) sumOfEvenNum += i;
-}
-
-console.log(sumOfEvenNum);
-
-
-//Output all numbers in the range from 100 to 200 multiples of 3
-
-const arrayOfNumMultiOfTree = [];
-
-for (let i = 100; i <= 200; i++) {
-	if(i % 3 === 0) arrayOfNumMultiOfTree.push(i);
-}
-
-const arrToStrOfMultiOfTree = arrayOfNumMultiOfTree.join(`, `);
-console.log(arrToStrOfMultiOfTree);
-
-
-//Calculate and output all divisors of a positive integer.
-
-const arrOfNumDivOfInt = [];
-
-let naturalNumber = +prompt(`Enter a natural number`);
-
-for (let i = 1; i <= naturalNumber; i++) {
-	if (naturalNumber % i === 0) arrOfNumDivOfInt.push(i);
-}
-
-const arrToStrOfNumDivOfInt = arrOfNumDivOfInt.join(`, `);
-console.log(arrToStrOfNumDivOfInt);
-
-
-//Calculate the number of even divisors of a positive integer
-
-const arrayOfNumEvenOfInt = [];
-const arrayOfEvenNumbers = [];
-
-let naturalNum = +prompt(`Enter a natural number`);
-
-for (let i = 1; i <= naturalNum; i++) {
-	if (naturalNum % i === 0) arrayOfNumEvenOfInt.push(i);
-}
-
-for (let i = 0; i <= arrayOfNumEvenOfInt.length; i++) {
-	if (arrayOfNumEvenOfInt[i] % 2 === 0) arrayOfEvenNumbers.push(arrayOfNumEvenOfInt[i]);
-}
-
-const arrToStrOfNumEvenOfInt = arrayOfEvenNumbers.join(`, `);
-console.log(arrToStrOfNumEvenOfInt);
-
-
-//Calculate the sum of even divisors of a positive integer
-
-const arrOfNumSumOfEvenDiv = [];
-let sumOfEvenNumbers = 0;
-
-let natNum = +prompt(`Enter a natural number`);
-
-for (let i = 1; i <= natNum; i++) {
-	if (natNum % i === 0) arrOfNumSumOfEvenDiv.push(i);
-}
-
-for (let i = 0; i <= arrOfNumSumOfEvenDiv.length; i++) {
-	if (arrOfNumSumOfEvenDiv[i] % 2 === 0) sumOfEvenNumbers += arrOfNumSumOfEvenDiv[i];
-}
-
-console.log(sumOfEvenNumbers);
-
-
-//Output the complete multiplication table from 1 to 10
-
-const arrOfNumMultiTable = [];
-
-for (let i = 1; i <= 10; i++) {
-	for (let j = 1; j <= 10; j++) {
-		arrOfNumMultiTable.push(i * j)
+for (let i = 1; i < 100; i++) {
+	if (3 ** i > Number.MAX_SAFE_INTEGER) {
+		break;
+	} else if (3 ** i === userNumber) {
+		alert(`Your number is 3 in ${i} degree`);
+		break;
 	}
 }
-
-const arrToStrOfNumMultiTable = arrOfNumMultiTable.join(`, `);
-console.log(arrToStrOfNumMultiTable);
